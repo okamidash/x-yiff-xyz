@@ -1,1 +1,7 @@
-import site/*.conf
+{
+	log {
+		format console
+		output stdout
+	}
+}
+import /site/*.conf

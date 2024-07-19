@@ -25,3 +25,4 @@ services:
       - GITSYNC_ROOT=/root/x-yiff-xyz
     volumes:
       - /root/x-yiff-xyz:/root/x-yiff-xyz
+      - /root/.ssh/id_rsa:/etc/git-secret/ssh

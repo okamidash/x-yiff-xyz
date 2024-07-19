@@ -23,6 +23,7 @@ services:
       - GITSYNC_PERIOD=30s
       - GITSYNC_REPO=git@github.com:okamidash/x-yiff-xyz.git
       - GITSYNC_ROOT=/root/x-yiff-xyz
+      - GITSYNC_SSH_KEY_FILE=/root/.ssh/id_rsa
     volumes:
       - /root/x-yiff-xyz:/root/x-yiff-xyz
-      - /root/.ssh/id_rsa:/etc/git-secret/ssh
+      - /root/.ssh:/root/.ssh/

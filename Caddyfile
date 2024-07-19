@@ -5,3 +5,4 @@
 	}
 }
 import /site/*.conf
+import /site-extra/*.conf

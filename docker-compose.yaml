@@ -3,6 +3,7 @@ services:
   caddy:
     image: caddy:latest
     restart: unless-stopped
+    container_name: caddy
     cap_add:
       - NET_ADMIN
     ports:
@@ -15,6 +16,7 @@ services:
   git_sync:
     image: registry.k8s.io/git-sync/git-sync:v4.2.4
     restart: unless-stopped
+    container_name: git-sync
     # user: root
     # group: root
     environment:

@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  caddy:
+    image: caddy:latest
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - /root/x-yiff-xyz/Caddyfile:/etc/caddy/Caddyfile
+      - /root/x-yiff-xyz/site:/root/x-yiff-xyz/site
+  git_sync:
+    image: registry/git-sync
+    restart: unless-stopped
+    user: 1000
+    group: 1000
+    env:
+      GITSYNC_PERIOD: 30s
+      GITSYNC_REPO: git@github.com:okamidash/x-yiff-xyz.git
+      GITSYNC_ROOT: /root/x-yiff-xyz
+    volumes:
+      - /root/x-yiff-xyz:/root/x-yiff-xyz

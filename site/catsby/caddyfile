@@ -1,0 +1,5 @@
+catsby.yiff.xyz {
+    rewrite * /index.jpg
+    root site/catsby
+    file_server
+}

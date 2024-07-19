@@ -13,7 +13,7 @@ services:
       - /root/x-yiff-xyz/Caddyfile:/etc/caddy/Caddyfile
       - /root/x-yiff-xyz/site:/root/x-yiff-xyz/site
   git_sync:
-    image: registry/git-sync
+    image: registry.k8s.io/git-sync/git-sync:v4.2.4
     restart: unless-stopped
     # user: root
     # group: root

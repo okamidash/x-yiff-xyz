@@ -4,6 +4,7 @@ services:
     image: caddy:latest
     restart: unless-stopped
     container_name: caddy
+    command: caddy run --config /etc/caddy/Caddyfile --adapter caddyfile --watch
     cap_add:
       - NET_ADMIN
     ports:
